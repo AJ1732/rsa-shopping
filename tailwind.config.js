@@ -20,6 +20,8 @@ export default {
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
+        josefinSans: ['Josefin Sans', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       spacing: {
         '8xl': '96rem',
