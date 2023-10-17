@@ -7,9 +7,9 @@ function App() {
   // https://dummyjson.com/docs
 
   return (
-    <>
-      <h1>Res Stores</h1>
-    </>
+    <div>
+      <h1 className='font-poppins font-bold m-auto'>Rsa Stores</h1>
+    </div>
   )
 }
 
