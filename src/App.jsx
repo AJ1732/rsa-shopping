@@ -1,4 +1,6 @@
 import './App.css'
+import Header from './components/Header'
+import Items from './components/Items'
 
 function App() {
   // https://dummyjson.com/docs/products
@@ -7,8 +9,9 @@ function App() {
   // https://dummyjson.com/docs
 
   return (
-    <div>
-      <h1 className='font-poppins font-bold m-auto'>Rsa Stores</h1>
+    <div className='font-josefinSans flex flex-col gap-4'>
+      <Header />
+      <Items />
     </div>
   )
 }
