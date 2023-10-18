@@ -20,7 +20,7 @@ const Items = () => {
   }, []);
 
   return (
-    <section className='w-full px-4 | grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center'>
+    <section className='px-4 pb-10 | grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center'>
       {products.map( (product) => (
         <ItemCard key={product.id} product={product} />
       )) }

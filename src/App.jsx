@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/Header'
-import Items from './components/Items'
+import Main from './components/Main'
 
 function App() {
   // https://dummyjson.com/docs/products
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='font-josefinSans flex flex-col gap-4'>
       <Header />
-      <Items />
+      <Main />
     </div>
   )
 }
