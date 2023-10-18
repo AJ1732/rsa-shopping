@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const Categories = () => {
+const Categories = ({ handleCallback }) => {
   const [ categories, setCategories ] = useState([])
 
   const fetchData = async () => {
@@ -22,20 +22,20 @@ const Categories = () => {
     return `${word.charAt(0).toUpperCase()}${word.slice(1)}`
   }
 
-  const CategoriesElement = categories.map((category) => {
+  const categoriesElement = categories.map((category) => {
     const index = categories.indexOf(category)
-    return <button 
+    return  <button 
               key={index} 
-              onClick={() => console.log(category)}
-              className='bg-white-grey py-2 px-4 rounded-3xl | text-xs | box-border cursor-pointer hover:border hover:border-black'
+              onClick={() => handleCallback(category)}
+              className='bg-white-grey py-2 px-4 rounded-3xl | text-xs | cursor-pointer border border-white-grey hover:border-black'
             >
-                {toCapitalize(category)}
+              {toCapitalize(category)}
             </button>
   })
 
   return (
-    <div className='p-2 | flex flex-wrap justify-center items-center gap-4 | box-border'>
-      {CategoriesElement}
+    <div className='p-3 | flex flex-wrap justify-center items-center gap-4'>
+      {categoriesElement}
     </div>
   )
 }

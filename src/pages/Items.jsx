@@ -1,29 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ItemCard from './ItemCard';
 
-const Items = () => {
-  const [ products, setProducts ] = useState([])
+const Items = ({ products, categoryProducts, loading }) => {
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`https://dummyjson.com/products`);
-      const jsonData = await response.json();
-      setProducts(jsonData.products);
-    } catch (error) {
-      console.log(error);
-      throw new Error(error);
-    }
-  };
+  console.log(loading);
 
-  useEffect(() => {
-    fetchData()
-  }, []);
+  const itemsElement = products.map((product) => {
+    return  <ItemCard key={product.id} product={product} />
+  })
+  const categoryItemsElement = categoryProducts.map((categoryProduct) => {
+    return  <ItemCard key={categoryProduct.id} product={categoryProduct} />
+  })
 
   return (
     <section className='px-4 py-10 | grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center'>
-      {products.map( (product) => (
-        <ItemCard key={product.id} product={product} />
-      )) }
+      { itemsElement }
+      {/* { categoryItemsElement } */}
     </section>
   )
 }
