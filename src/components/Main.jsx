@@ -7,8 +7,6 @@ const Main = () => {
   const [ products, setProducts ] = useState([])
   const [ categoryProducts, setCategoryProducts ] = useState([])
 
-  const [loading, setLoading] = useState(true)
-
   const fetchData = async () => {
     try {
       const response = await fetch(`https://dummyjson.com/products`);
@@ -49,8 +47,7 @@ const Main = () => {
         handleCallback={callback} />
       <Items 
         products={products} 
-        categoryProducts={categoryProducts} 
-        loading={loading} />
+        categoryProducts={categoryProducts} />
     </main>
   )
 }
