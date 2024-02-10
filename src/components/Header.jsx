@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FiShoppingCart } from 'react-icons/fi';
+import { TbShoppingCart } from "react-icons/tb";
 
 const Header = () => {
   const [ isOpen , setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ const Header = () => {
         onClick={ () => setIsOpen(!isOpen) } 
         className='fixed right-0 top-9 | bg-ft-grey w-12 h-12 | flex justify-center items-center | text-white text-center text-2xl font-extrabold rounded-l-sm | '
       >
-        <FiShoppingCart />
+        <TbShoppingCart />
       </button>
     </header>
   )
