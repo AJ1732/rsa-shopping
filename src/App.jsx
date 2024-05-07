@@ -1,4 +1,6 @@
 import './App.css'
+import ErrorBoundary from './pages/Error/ErrorBoundary.jsx'
+import ErrorPage from './pages/Error/ErrorPage.jsx'
 import Header from './layout/Header'
 import Main from './layout/Main'
 
@@ -10,8 +12,10 @@ function App() {
 
   return (
     <div className='content-grid | font-josefinSans'>
-      <Header />
-      <Main />
+      <ErrorBoundary fallback={<ErrorPage />}>
+        <Header />
+        <Main />
+      </ErrorBoundary>
     </div>
   )
 }
