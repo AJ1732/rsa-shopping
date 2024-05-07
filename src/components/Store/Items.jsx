@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
 import StoreItem from './StoreItem';
 
-const Items = ({ products, categoryProducts, loading }) => {
+const Items = ({ products, categoryProducts }) => {
   const itemsElement = products.map((product) => {
     return  <StoreItem key={product.id} product={product} />
   })
@@ -16,7 +15,6 @@ const Items = ({ products, categoryProducts, loading }) => {
         categoryItemsElement:
         itemsElement
       }
-      {/* { categoryItemsElement } */}
     </section>
   )
 }
