@@ -10,7 +10,7 @@ const Items = ({ products, categoryProducts, loading }) => {
   })
 
   return (
-    <section className='px-4 py-10 | grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center'>
+    <section className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center'>
       { 
         categoryProducts.length > 0 ?
         categoryItemsElement:

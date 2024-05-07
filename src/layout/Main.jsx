@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import Categories from '../pages/Categories'
-import Items from '../pages/Items'
+import Categories from '../components/Categories'
+import Items from '../components/Items'
 
 const Main = () => {
   const [ products, setProducts ] = useState([])
@@ -42,7 +42,7 @@ const Main = () => {
   }, []);
 
   return (
-    <main>
+    <main className='space-y-4'>
       <Categories 
         handleCallback={callback} />
       <Items 

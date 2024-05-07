@@ -1,6 +1,6 @@
 import './App.css'
-import Header from './components/Header'
-import Main from './components/Main'
+import Header from './layout/Header'
+import Main from './layout/Main'
 
 function App() {
   // https://dummyjson.com/docs/products
@@ -9,7 +9,7 @@ function App() {
   // https://dummyjson.com/docs
 
   return (
-    <div className='font-josefinSans flex flex-col gap-4'>
+    <div className='content-grid | font-josefinSans'>
       <Header />
       <Main />
     </div>
