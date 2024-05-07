@@ -5,7 +5,7 @@ const Header = () => {
     <header className='relative'>
       <h1 className='font-extrabold font-poppins text-4xl text-center py-10'>Rsa Stores</h1>
 
-      <CartButon />
+      <CartButton />
     </header>
   )
 }
