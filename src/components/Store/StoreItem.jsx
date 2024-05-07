@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ItemCard = ({ product }) => {
+const StoreItem = ({ product }) => {
   const { title, price, thumbnail } = product
 
   return (
@@ -27,4 +27,4 @@ const ItemCard = ({ product }) => {
   )
 }
 
-export default ItemCard
+export default StoreItem

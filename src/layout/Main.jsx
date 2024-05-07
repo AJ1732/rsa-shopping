@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import Categories from '../components/Categories'
-import Items from '../components/Items'
+import Items from '../components/Store/Items'
 
 const Main = () => {
   const [ products, setProducts ] = useState([])

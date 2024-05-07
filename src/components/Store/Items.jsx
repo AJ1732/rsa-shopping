@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import ItemCard from './ItemCard';
+import StoreItem from './StoreItem';
 
 const Items = ({ products, categoryProducts, loading }) => {
   const itemsElement = products.map((product) => {
-    return  <ItemCard key={product.id} product={product} />
+    return  <StoreItem key={product.id} product={product} />
   })
   const categoryItemsElement = categoryProducts.map((categoryProduct) => {
-    return  <ItemCard key={categoryProduct.id} product={categoryProduct} />
+    return  <StoreItem key={categoryProduct.id} product={categoryProduct} />
   })
 
   return (
