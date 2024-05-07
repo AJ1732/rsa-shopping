@@ -1,6 +1,9 @@
+import { useStoreContext } from '../../context/StoreProvider';
 import StoreItem from './StoreItem';
 
-const Items = ({ products, categoryProducts }) => {
+const Items = () => {
+  const { products, categoryProducts } = useStoreContext()
+  
   const itemsElement = products.map((product) => {
     return  <StoreItem key={product.id} product={product} />
   })

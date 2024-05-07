@@ -1,15 +1,49 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 // CREATE CONTEXT
 export const StoreContext = createContext(undefined);
 
 // PROVIDE CONTEXT
 export const StoreProvider = ({ children }) => {
-  const [ expand, setExpand ] = useState(false);
-  
+  const [ products, setProducts ] = useState([])
+  const [ categoryProducts, setCategoryProducts ] = useState([])
+
+  // FETCH STORE PRODUCTS
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://dummyjson.com/products`);
+        const jsonData = await response.json();
+        setProducts(jsonData.products);
+      } catch (error) {
+        console.log(error);
+        throw new Error(error);
+      }
+    };
+    fetchData()
+  }, []);
+
+  // FETCH CATEGORIZED PRODUCTS
+  const fetchCategoryData = async (childData) => {
+    try {
+      const response = await fetch(`https://dummyjson.com/products/category/${childData}`);
+      const jsonData = await response.json();
+      setCategoryProducts(jsonData.products);
+    } catch (error) {
+      console.log(error);
+      throw new Error(error);
+    } 
+  };
+
+  const callback = (childData) => {
+    fetchCategoryData(childData)
+  }
+ 
   const value = {
-    expand,
-    setExpand,
+    products,
+    categoryProducts,
+    callback,
+
   }
 
   return (
@@ -20,4 +54,4 @@ export const StoreProvider = ({ children }) => {
 }
 
 // CUSTOM CONTEXT HOOK
-export const useValueContext = () => useContext(Context);
+export const useStoreContext = () => useContext(StoreContext);
